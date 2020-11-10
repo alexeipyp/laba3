@@ -1,4 +1,5 @@
 #include "kettle.h"
+#include "windows.h"
 #include <iostream>
 
 using namespace std;
@@ -24,8 +25,7 @@ void Kettle::changeIsKettleFilledWithWaterStatus() {
 }
 
 void Kettle::turnOnKettle() {
-    struct timespec sleeptime = {1, 0};
-    struct timespec buff;
+
     if (isKettleSocketed && isKettleFilledWithWater)
     {
         isKettleTurnedOn = true;
@@ -34,7 +34,7 @@ void Kettle::turnOnKettle() {
         for (int i = 5; i >=1; i--)
         {
             cout << i << "..." << endl;
-            nanosleep(&sleeptime, &buff);
+            Sleep(1000);
         }
         cout << "Вода в чайнике закипела! " << endl;
         isKettleTurnedOn = false;

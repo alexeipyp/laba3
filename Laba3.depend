@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1605046790 source:/home/despair/Projects/Laba3/kettle.cpp
+	"kettle.h"
+	<iostream>
+
+1605045688 /home/despair/Projects/Laba3/kettle.h
+
+1605046750 source:/home/despair/Projects/Laba3/main.cpp
+	<iostream>
+	"kettle.h"
+	<string>
+
