@@ -30,37 +30,55 @@ void Kettle::turnOnKettle() {
     {
         isKettleTurnedOn = true;
         displayKettleTurnedOnStatus();
-        cout << "Ð’Ð¾Ð´Ð° Ð² Ñ‡Ð°Ð¹Ð½Ð¸ÐºÐµ Ð·Ð°ÐºÐ¸Ð¿Ð¸Ñ‚ Ñ‡ÐµÑ€ÐµÐ·: " << endl;
+        cout << "Âîäà â ÷àéíèêå çàêèïèò ÷åðåç: " << endl;
         for (int i = 5; i >=1; i--)
         {
             cout << i << "..." << endl;
             Sleep(1000);
         }
-        cout << "Ð’Ð¾Ð´Ð° Ð² Ñ‡Ð°Ð¹Ð½Ð¸ÐºÐµ Ð·Ð°ÐºÐ¸Ð¿ÐµÐ»Ð°! " << endl;
+        cout << "Âîäà â ÷àéíèêå çàêèïåëà! " << endl;
         isKettleTurnedOn = false;
     }
     else
     {
-        cout << "Ð§Ð°Ð¹Ð½Ð¸Ðº Ð½Ðµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½ Ðº ÑÐµÑ‚Ð¸ Ð¸/Ð¸Ð»Ð¸ Ñ‡Ð°Ð¹Ð½Ð¸Ðº Ð¿ÑƒÑÑ‚" << endl;
+        cout << "×àéíèê íå ïîäêëþ÷åí ê ñåòè è/èëè ÷àéíèê ïóñò" << endl;
     }
 }
 
-void Kettle::displayKettleSocketedStatus() {
+std::string Kettle::displayKettleSocketedStatus() {
 
-    isKettleSocketed ? cout << "Ð§Ð°Ð¹Ð½Ð¸Ðº ÐŸÐžÐ”ÐšÐ›Ð®Ð§Ð•Ð Ðº ÑÐµÑ‚Ð¸" << endl : cout <<
-    "Ð§Ð°Ð¹Ð½Ð¸Ðº ÐÐ• ÐŸÐžÐ”ÐšÐ›Ð®Ð§Ð•Ð Ðº ÑÐµÑ‚Ð¸" << endl;
+    if (isKettleSocketed)
+    {
+        return "×àéíèê ÏÎÄÊËÞ×ÅÍ ê ñåòè";
+    }
+    else
+    {
+        return "×àéíèê ÍÅ ÏÎÄÊËÞ×ÅÍ ê ñåòè";
+    }
 }
 
-void Kettle::displayKettleFilledWithWaterStatus()
+std::string Kettle::displayKettleFilledWithWaterStatus()
 {
-    isKettleFilledWithWater ? cout << "Ð§Ð°Ð¹Ð½Ð¸Ðº ÐÐÐŸÐžÐ›ÐÐ•Ð Ð²Ð¾Ð´Ð¾Ð¹" << endl : cout <<
-    "Ð§Ð°Ð¹Ð½Ð¸Ðº ÐŸÐ£Ð¡Ð¢ÐžÐ™" << endl;
+    if (isKettleFilledWithWater)
+    {
+        return "×àéíèê ÍÀÏÎËÍÅÍ âîäîé";
+    }
+    else
+    {
+        return "×àéíèê ÏÓÑÒÎÉ";
+    }
 }
 
-void Kettle::displayKettleTurnedOnStatus()
+std::string Kettle::displayKettleTurnedOnStatus()
 {
-    isKettleTurnedOn ? cout << "Ð§Ð°Ð¹Ð½Ð¸Ðº Ð’ÐšÐ›Ð®Ð§Ð•Ð" << endl : cout <<
-    "Ð§Ð°Ð¹Ð½Ð¸Ðº Ð’Ð«ÐšÐ›Ð®Ð§Ð•Ð" << endl;
+    if (isKettleTurnedOn)
+    {
+        return "×àéíèê ÂÊËÞ×ÅÍ";
+    }
+    else
+    {
+        return "×àéíèê ÂÛÊËÞ×ÅÍ";
+    }
 }
 
 bool Kettle::getIsKettleSocketed() {

@@ -1,19 +1,18 @@
-#include <iostream>
 #include "kettle.h"
-#include <string>
+
 
 using namespace std;
 
 bool isMenuActive = true;
 const string menuText =
-    "\n РњРµРЅСЋ:\n 1 - РџРѕРґРєР»СЋС‡РёС‚СЊ Рє/РѕС‚РєР»СЋС‡РёС‚СЊ РѕС‚ СЃРµС‚Рё С‡Р°Р№РЅРёРє\n 2 - РќР°РїРѕР»РЅРёС‚СЊ/РћРїРѕСЂРѕР¶РЅРёС‚СЊ С‡Р°Р№РЅРёРє\n 3 - Р’РєР»СЋС‡РёС‚СЊ С‡Р°Р№РЅРёРє\n 4 - Р’С‹С…РѕРґ: ";
+    "\n Меню:\n 1 - Подключить к/отключить от сети чайник\n 2 - Наполнить/Опорожнить чайник\n 3 - Включить чайник\n 4 - Выход: ";
 
 void displayKettleStatus(Kettle kettle)
 {
     cout << endl;
-    kettle.displayKettleSocketedStatus();
-    kettle.displayKettleFilledWithWaterStatus();
-    kettle.displayKettleTurnedOnStatus();
+    cout << kettle.displayKettleSocketedStatus() << endl;
+    cout << kettle.displayKettleFilledWithWaterStatus() << endl;
+    cout << kettle.displayKettleTurnedOnStatus() << endl;
 }
 
 int main() {
@@ -44,10 +43,10 @@ int main() {
                 displayKettleStatus(kettle);
                 break;
             case 4:
-                cout << "\nР’С‹С…РѕРґ..." << endl;
+                cout << "\nВыход..." << endl;
                 isMenuActive = false;
                 break;
-        }        
+        }
     }
 
     return 0;

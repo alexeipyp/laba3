@@ -10,3 +10,15 @@
 	"kettle.h"
 	<string>
 
+1605125833 source:d:\laba3\kettle.cpp
+	"kettle.h"
+	"windows.h"
+	<iostream>
+
+1605125620 d:\laba3\kettle.h
+	<string>
+	<iostream>
+
+1605125902 source:d:\laba3\main.cpp
+	"kettle.h"
+

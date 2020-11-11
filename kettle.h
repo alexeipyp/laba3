@@ -1,6 +1,9 @@
 #ifndef KETTLE_H
 #define KETTLE_H
 
+#include <string>
+#include <iostream>
+
 class Kettle {
 public:
     Kettle();
@@ -11,9 +14,9 @@ public:
     void changeIsKettleFilledWithWaterStatus();
     void turnOnKettle();
 
-    void displayKettleSocketedStatus();
-    void displayKettleFilledWithWaterStatus();
-    void displayKettleTurnedOnStatus();
+    std::string displayKettleSocketedStatus();
+    std::string displayKettleFilledWithWaterStatus();
+    std::string displayKettleTurnedOnStatus();
 
     bool getIsKettleSocketed();
     bool getIsKettleFilledWithWater();
